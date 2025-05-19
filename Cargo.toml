@@ -1,0 +1,12 @@
+[package]
+name = "tokay-wasm"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+# tokay = "0.6.7"
+tokay = { path = "../tokay-main", default-features = false }

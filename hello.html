@@ -1,0 +1,12 @@
+<html>
+    <script type="module">
+        import init, { tokay } from "./pkg/tokay_wasm.js";
+
+        await init();
+        document.write(
+            tokay(
+                `l = ,; for i in 1,2,3 l.push(i * "Hello" + "Tokay!"); "\n".join(l)`,
+            ),
+        );
+    </script>
+</html>
