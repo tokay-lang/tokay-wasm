@@ -1,12 +1,32 @@
+<!doctype html>
 <html>
-    <script type="module">
-        import init, { tokay } from "./pkg/tokay_wasm.js";
+    <body>
+        <form id="program">
+            <textarea id="input" placeholder="Input (optional)">123 456 789</textarea>
+            <textarea id="code" placeholder="Tokay" required>Int * 3</textarea>
+            <input type="submit" />
+        </form>
 
-        await init();
-        document.write(
-            tokay(
-                `l = ,; for i in 1,2,3 l.push(i * "Hello" + "Tokay!"); "\n".join(l)`,
-            ),
-        );
-    </script>
+        <script type="module">
+            import init, { tokay } from "./pkg/tokay_wasm.js";
+
+            await init();
+
+            document
+                .getElementById("program")
+                .addEventListener("submit", (e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+
+                    document.body.appendChild(
+                        document.createTextNode(
+                            tokay(
+                                document.getElementById("code").value,
+                                document.getElementById("input").value,
+                            ),
+                        ),
+                    );
+                });
+        </script>
+    </body>
 </html>

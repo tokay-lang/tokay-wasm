@@ -543,6 +543,8 @@ dependencies = [
 [[package]]
 name = "tokay"
 version = "0.6.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8df35633b9785e70719ecaa68fb7fd0dd26544190b2f2c71711aeeb090d33eec"
 dependencies = [
  "charclass",
  "indexmap",

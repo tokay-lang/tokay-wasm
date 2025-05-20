@@ -2,11 +2,17 @@
 name = "tokay-wasm"
 version = "0.1.0"
 edition = "2024"
+description = "Tokay-WASM-interface"
+authors = ["Jan Max Meyer <jmm@phorward.de>"]
+homepage = "https://tokay.dev/"
+repository = "https://github.com/tokay-lang/tokay-wasm"
+license = "MIT"
 
 [lib]
 crate-type = ["rlib", "cdylib"]
 
 [dependencies]
 wasm-bindgen = "0.2"
-# tokay = "0.6.7"
-tokay = { path = "../tokay-main", default-features = false }
+tokay = { version = "0.6.8", default-features = false, features = [
+    "static_expression_evaluation",
+] }
