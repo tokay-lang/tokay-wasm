@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            :root {
+                --bg-color: #EEEEEE;
+                --border-color: hsl(0, 0%, 0%);
+                --text-color: #212529;
+                --label-color: #495057;
+                --button-color-secondary: #17BEBB;
+                --button-color-primary: #F26430;
+            }
+
+            body {
+                font-family: sans-serif;
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                padding: 2rem;
+            }
+
+            #program {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            .row {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .col {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            }
+
+            label {
+                margin-bottom: 0.25rem;
+                font-weight: bold;
+                color: var(--label-color);
+            }
+
+            textarea {
+                min-height: 150px;
+                padding: 0.75rem;
+                border: 1px solid var(--border-color);
+                border-radius: 5px;
+                resize: vertical;
+                font-family: monospace;
+                font-size: 1rem;
+            }
+
+            #output {
+                min-height: 100px;
+                border: 1px solid var(--border-color);
+                border-radius: 5px;
+                padding: 0.75rem;
+                background: #fff;
+                white-space: pre-wrap;
+                font-family: monospace;
+            }
+
+            button {
+                padding: 0.75rem;
+                background-color: var(--button-color-primary);
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 1rem;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            #clear {
+                background-color: var(--button-color-secondary);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="program">
+            <div class="row">
+                <div class="col">
+                    <label for="code">Code</label>
+                    <textarea id="code" placeholder="Code" required>Int * 3</textarea>
+                </div>
+                <div class="col">
+                    <label for="input">Input</label>
+                    <textarea id="input" placeholder="Input (optional)">123 456 789</textarea>
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="output">Output</label>
+                <div id="output"></div>
+            </div>
+
+            <div class="row">
+                <button id="submit" type="submit">Run</button>
+                <button id="clear">Clear</button>
+            </div>
+        </div>
+
+        <script type="module">
+            import init, { tokay } from "./pkg/tokay_wasm.js";
+
+            await init();
+
+            document
+                .getElementById("submit")
+                .addEventListener("click", (e) => {
+                    document.getElementById("output").appendChild(
+                        document.createTextNode(
+                            tokay(
+                                document.getElementById("code").value,
+                                document.getElementById("input").value,
+                            ),
+                        ),
+                    );
+                });
+
+            document
+                .getElementById("clear")
+                .addEventListener("click", (e) => {
+                    document.getElementById("output").innerHTML = "";
+                });
+        </script>
+    </body>
+</html>
