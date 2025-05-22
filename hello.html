@@ -2,9 +2,19 @@
 <html>
     <body>
         <form id="program">
-            <textarea id="input" placeholder="Input (optional)">123 456 789</textarea>
-            <textarea id="code" placeholder="Tokay" required>Int * 3</textarea>
-            <input type="submit" />
+            <div>
+                <textarea id="code" placeholder="Tokay" required>Int * 3</textarea>
+            </div>
+
+            <div>
+                <textarea id="input" placeholder="Input (optional)">123 456 789</textarea>
+            </div>
+
+            <div id="output"></div>
+
+            <div>
+                <input type="submit" value="Run" />
+            </div>
         </form>
 
         <script type="module">
@@ -18,7 +28,7 @@
                     e.stopPropagation();
                     e.preventDefault();
 
-                    document.body.appendChild(
+                    document.getElementById("output").appendChild(
                         document.createTextNode(
                             tokay(
                                 document.getElementById("code").value,
