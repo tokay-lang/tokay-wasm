@@ -95,6 +95,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "console_error_panic_hook"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a06aeb73f470f66dcdbf7223caeebb85984942f22f1adb2a088cf9668146bbbc"
+dependencies = [
+ "cfg-if",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "ctor"
 version = "0.1.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -531,6 +541,15 @@ dependencies = [
 
 [[package]]
 name = "tokay"
+version = "0.1.0"
+dependencies = [
+ "console_error_panic_hook",
+ "tokay 0.6.8",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "tokay"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "df5d97be4460e6bd51ff2660b0925c8d2ebb81387ee23bc2e6d59e105d77591a"
@@ -566,14 +585,6 @@ dependencies = [
  "quote",
  "syn 1.0.109",
  "tokay 0.4.0",
-]
-
-[[package]]
-name = "tokay-wasm"
-version = "0.1.0"
-dependencies = [
- "tokay 0.6.8",
- "wasm-bindgen",
 ]
 
 [[package]]
