@@ -1,13 +1,18 @@
 # Tokay (WASM)
 
-This is the web-assembly package of the [Tokay programming language](https://tokay.dev).<br>
-The programming language itself is developed in Rust, and can be found officially [here](https://github.com/tokay-lang/tokay).
+Tokay is a programming language designed for ad-hoc parsing.
 
-## Build, serve, play
+This is the web-assembly NPM package of the [Tokay programming language](https://tokay.dev).
 
-- Build: `wasm-pack build --target=web --out-dir=pkg-web`
-- Serve: `python -m http.server`
-- Play: [http://localhost:8000/tokay.html](http://localhost:8000/tokay.html)
+The Tokay programming language itself is developed in Rust, and can be found officially [here](https://github.com/tokay-lang/tokay).
+
+## Build & publish
+
+- Build:
+  - for bundlers like `vite`: `wasm-pack build --target=bundler`
+  - for nodejs: `wasm-pack build --target=nodejs`
+  - for web: `wasm-pack build --target=web`
+- Publish: `wasm-pack publish`
 
 ## License
 
