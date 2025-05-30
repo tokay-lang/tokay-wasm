@@ -1,8 +1,8 @@
 [package]
-name = "tokay"
-version = "0.6.8-1"  # sticks to Tokay
+name = "tokay-wasm"
+version = "0.6.8"  # synchronous to Tokay release
 edition = "2024"
-description = "Tokay programming language (WASM-port)"
+description = "Tokay programming language (WASM-bindings)"
 authors = ["Jan Max Meyer <jmm@phorward.de>"]
 homepage = "https://tokay.dev/"
 repository = "https://github.com/tokay-lang/tokay-wasm"
