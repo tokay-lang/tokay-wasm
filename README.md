@@ -21,9 +21,9 @@ console.log(run("Int * 3", "123 456 789"));
 ## Build & publish
 
 - Build:
-  - for bundlers like `vite`: `wasm-pack build --target=bundler`
-  - for nodejs: `wasm-pack build --target=nodejs`
-  - for web: `wasm-pack build --target=web`
+  - for bundlers like `vite`: `wasm-pack build --target=bundler --out-name=tokay`
+  - for nodejs: `wasm-pack build --target=nodejs --out-name=tokay`
+  - for web: `wasm-pack build --target=web --out-name=tokay`
 - Publish: `wasm-pack publish`
 
 ## License

@@ -15,7 +15,7 @@ crate-type = ["rlib", "cdylib"]
 wasm-bindgen = "0.2"
 console_error_panic_hook = "0.1"
 console_log = "1"
-tokay = { version = "0.6.8", path="../tokay-main", default-features = false, features = [
+tokay = { version = "0.6.8", default-features = false, features = [
     "static_expression_evaluation",
 ] }
 log = "0.4"
