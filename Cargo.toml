@@ -1,6 +1,6 @@
 [package]
 name = "tokay-wasm"
-version = "0.6.8"  # synchronous to Tokay release
+version = "0.6.9"  # synchronous to Tokay release
 edition = "2024"
 description = "Tokay programming language (WASM-bindings)"
 authors = ["Jan Max Meyer <jmm@phorward.de>"]
@@ -12,10 +12,11 @@ license = "MIT"
 crate-type = ["rlib", "cdylib"]
 
 [dependencies]
-wasm-bindgen = "0.2"
 console_error_panic_hook = "0.1"
 console_log = "1"
-tokay = { version = "0.6.8", default-features = false, features = [
-    "static_expression_evaluation",
-] }
+js-sys = "0.3"
 log = "0.4"
+tokay = { path = "../tokay-main", version = "0.6.9", default-features = false, features = ["static_expression_evaluation"] }
+# tokay-macros = "0.5"
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = ["console"] }

@@ -572,9 +572,7 @@ dependencies = [
 
 [[package]]
 name = "tokay"
-version = "0.6.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8df35633b9785e70719ecaa68fb7fd0dd26544190b2f2c71711aeeb090d33eec"
+version = "0.6.9"
 dependencies = [
  "charclass",
  "indexmap",
@@ -600,13 +598,15 @@ dependencies = [
 
 [[package]]
 name = "tokay-wasm"
-version = "0.6.8"
+version = "0.6.9"
 dependencies = [
  "console_error_panic_hook",
  "console_log",
+ "js-sys",
  "log",
- "tokay 0.6.8",
+ "tokay 0.6.9",
  "wasm-bindgen",
+ "web-sys",
 ]
 
 [[package]]
