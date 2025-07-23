@@ -19,7 +19,7 @@ pub fn run(code: &str, input: &str, print_fn: Option<js_sys::Function>) -> Optio
     let mut compiler = Compiler::new();
     compiler.constant(
         "print",
-        RefValue::from(tokay::value::Func {
+        RefValue::from(tokay::value::DynBuiltin {
             name: "print",
             func: Box::new(move |context, args, _nargs| {
                 let mut output = if args.len() == 0 && context.is_some() {
